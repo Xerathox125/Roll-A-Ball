@@ -48,11 +48,15 @@ public class PlayerController : MonoBehaviour
         moveY = move.y;
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Point"))
+        if (other.gameObject.CompareTag("Points"))
         {
-            other.gameObject.SetActive(false);
+            Points point = other.gameObject.GetComponent<Points>();
+            if (point != null)
+            {
+                point.GetPoints();
+            }
         }
     }
 

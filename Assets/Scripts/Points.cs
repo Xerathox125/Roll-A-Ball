@@ -18,4 +18,10 @@ public class Points : MonoBehaviour
     {
         transform.Rotate(new Vector3(15, 45, 30) * Time.deltaTime);
     }
+
+    public void GetPoints()
+    {
+        GameManager.instance.AddPoint(1);
+        Destroy(gameObject);
+    }
 }
